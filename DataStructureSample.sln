@@ -89,6 +89,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LeftViewOfBT", "LeftViewOfB
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IsBST", "IsBST\IsBST.vcxproj", "{B4344416-1F65-48B7-873D-4BCEAAC6C955}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BinaryTreeVerticalTraversal", "BinaryTreeVerticalTraversal\BinaryTreeVerticalTraversal.vcxproj", "{55D5F2B2-F31B-4E34-8782-C5748228E38D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -531,6 +533,16 @@ Global
 		{B4344416-1F65-48B7-873D-4BCEAAC6C955}.Release|x64.Build.0 = Release|x64
 		{B4344416-1F65-48B7-873D-4BCEAAC6C955}.Release|x86.ActiveCfg = Release|Win32
 		{B4344416-1F65-48B7-873D-4BCEAAC6C955}.Release|x86.Build.0 = Release|Win32
+		{55D5F2B2-F31B-4E34-8782-C5748228E38D}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{55D5F2B2-F31B-4E34-8782-C5748228E38D}.Debug|x64.ActiveCfg = Debug|x64
+		{55D5F2B2-F31B-4E34-8782-C5748228E38D}.Debug|x64.Build.0 = Debug|x64
+		{55D5F2B2-F31B-4E34-8782-C5748228E38D}.Debug|x86.ActiveCfg = Debug|Win32
+		{55D5F2B2-F31B-4E34-8782-C5748228E38D}.Debug|x86.Build.0 = Debug|Win32
+		{55D5F2B2-F31B-4E34-8782-C5748228E38D}.Release|Any CPU.ActiveCfg = Release|Win32
+		{55D5F2B2-F31B-4E34-8782-C5748228E38D}.Release|x64.ActiveCfg = Release|x64
+		{55D5F2B2-F31B-4E34-8782-C5748228E38D}.Release|x64.Build.0 = Release|x64
+		{55D5F2B2-F31B-4E34-8782-C5748228E38D}.Release|x86.ActiveCfg = Release|Win32
+		{55D5F2B2-F31B-4E34-8782-C5748228E38D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
