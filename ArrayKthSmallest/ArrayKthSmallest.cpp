@@ -1,35 +1,29 @@
-// LinkedList.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// ArrayKthSmallest.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include "pch.h"
 #include <iostream>
-#include "List.h"
+
+using namespace std;
+
+int QuickSelect(int* arr, int left, int right, int k)
+{
+
+}
 
 int main()
 {
-    int isContinue = 1;
+    std::cout << "Enter the size of the array\n";
+	int size = 0;
+	cin >> size;
 
-    List myList;
-    int n;
+	int* arr = new int[size]();
 
-    while (isContinue)
-    {
-        std::cout << "Enter an element: \n";
-        std::cin >> n;
+	for (int i = 0; i < size; ++i)
+	{
+		cin >> arr[i];
+	}
 
-        //myList.Add(n);
-        myList.InsertInFront(n);
-
-        std::cout << "Do you want to enter another element: \n";
-        std::cin >> isContinue;
-    }
-
-    std::cout << "Inserting elements: \n";
-
-    myList.ReverseInGroup(4);
-
-    myList.Display();
-
+	
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

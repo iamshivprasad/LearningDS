@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{6300F0E5-EBC7-4A82-B87A-18C287540910}</ProjectGuid>
+    <ProjectGuid>{13B1CC1C-C850-4E0B-8FBB-601DF4BCF76C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>InfixToPostfix</RootNamespace>
+    <RootNamespace>LeftViewOfBT</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -91,7 +91,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\MyFolder\DS\DataStructureSample\PostfixEvaluationTest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,7 +142,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\MyFolder\DS\DataStructureSample\PostfixEvaluationTest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -153,8 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\PostfixEvaluationTest\Stack.cpp" />
-    <ClCompile Include="InfixToPostfix.cpp" />
+    <ClCompile Include="..\BinarySearchTree\BSTImpl.cpp" />
+    <ClCompile Include="LeftViewOfBT.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\BinarySearchTree\BSTImpl.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

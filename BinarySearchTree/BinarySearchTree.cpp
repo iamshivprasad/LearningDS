@@ -11,15 +11,15 @@ Node* Insert(Node* root, int val)
     if (root == nullptr)
     {
         root = new Node();
-        root->nVal = val;
+        root->data = val;
     }
-    else if(val > root->nVal)
+    else if(val > root->data)
     {
-        root->pRight = Insert(root->pRight, val);
+        root->right = Insert(root->right, val);
     }
-    else if (val <= root->nVal)
+    else if (val <= root->data)
     {
-        root->pLeft = Insert(root->pLeft, val);
+        root->left = Insert(root->left, val);
     }
     return root;
 }
@@ -50,37 +50,37 @@ int main()
     // Test IsBST()
 
     Node* root = new Node();
-    root->nVal = 1;
-    root->pLeft = nullptr;
-    root->pRight = nullptr;
+    root->data = 1;
+    root->left = nullptr;
+    root->right = nullptr;
 
     Node* tmp = new Node();
-    tmp->nVal = 2;
-    tmp->pLeft = nullptr;
-    tmp->pRight = nullptr;
+    tmp->data = 2;
+    tmp->left = nullptr;
+    tmp->right = nullptr;
 
-    root->pLeft = tmp;
-
-    tmp = new Node();
-    tmp->nVal = 3;
-    tmp->pLeft = nullptr;
-    tmp->pRight = nullptr;
-
-    root->pRight = tmp;
+    root->left = tmp;
 
     tmp = new Node();
-    tmp->nVal = 5;
+    tmp->data = 3;
+    tmp->left = nullptr;
+    tmp->right = nullptr;
 
-    root->pLeft->pLeft = tmp;
-
-    tmp = new Node();
-    tmp->nVal = 10;
-    root->pRight->pLeft = tmp;
+    root->right = tmp;
 
     tmp = new Node();
-    tmp->nVal = 44;
+    tmp->data = 5;
 
-    root->pLeft->pLeft->pLeft = tmp;
+    root->left->left = tmp;
+
+    tmp = new Node();
+    tmp->data = 10;
+    root->right->left = tmp;
+
+    tmp = new Node();
+    tmp->data = 44;
+
+    root->left->left->left = tmp;
 
     BSTImpl obj;
 

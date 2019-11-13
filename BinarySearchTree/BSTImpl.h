@@ -2,12 +2,12 @@
 
 struct Node
 {
-    int nVal;
+    int data;
 
-    Node* pLeft;
-    Node* pRight;
+    Node* left;
+    Node* right;
 
-    Node() : pLeft(nullptr), pRight(nullptr), nVal(-1)
+    Node() : left(nullptr), right(nullptr), data(-1)
     {
 
     }
@@ -34,6 +34,8 @@ public:
     Node* FindMin(Node* root);
 
     Node* Delete(Node* root, int nVal);
+
+	void LeftViewOfTree();
 
 private:
 

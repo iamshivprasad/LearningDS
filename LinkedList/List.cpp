@@ -40,9 +40,15 @@ void List::InsertInFront(int nValue)
     }
 }
 
-void List::ReverseByIteration()
+void List::ReverseByRecursion()
 {
    Reverse(m_pFirst);
+}
+
+void List::ReverseInGroup(int k)
+{
+	m_pFirst = Reverse(m_pFirst, k);
+
 }
 
 void List::Reverse(Node* p)
@@ -57,6 +63,28 @@ void List::Reverse(Node* p)
     Node* q = p->m_pNext;
     q->m_pNext = p;
     p->m_pNext = nullptr;
+}
+
+Node* List::Reverse(Node* pHead, int k)
+{
+	if (nullptr == pHead || nullptr == pHead->m_pNext)
+	{
+		return pHead;
+	}
+
+	int i = 1;
+	Node* curr = pHead, *next, *prev = nullptr;
+
+	while (i <= k && curr != nullptr)
+	{
+		next = curr->m_pNext;
+		curr->m_pNext = prev;
+		
+		prev = curr;
+		curr = next;
+
+		++i;
+	}
 }
 
 void List::Insert(int nValue, unsigned int nPos)
@@ -108,6 +136,100 @@ void List::Delete(Node* head)
     }
 
     head = nullptr;
+}
+
+void List::DetectAndRemoveLoop()
+{
+	Node* pSlow = m_pFirst;
+	Node* pFast = m_pFirst;
+
+	bool bIsLoop = false;
+	while (pSlow && pFast && pFast->m_pNext)
+	{
+		pSlow = pSlow->m_pNext;
+		pFast = pFast->m_pNext->m_pNext;
+
+		if (pSlow == pFast)
+		{
+			bIsLoop = true;
+			break;
+		}
+	}
+
+	// To find the start of the loop
+	// Set pSlow to head and move pFast one at a time
+	if (bIsLoop) 
+	{
+		pSlow = m_pFirst;
+		while (pSlow->m_pNext != pFast->m_pNext)
+		{
+			pSlow = pSlow->m_pNext;
+			pFast = pFast->m_pNext;
+		}
+
+		pFast->m_pNext = nullptr;
+
+	}
+
+}
+
+Node* List::SortedMerge(Node* left, Node* right)
+{
+	if (left == nullptr || right == nullptr)
+		return nullptr;
+
+	Node* first = left;
+	Node* second = right;
+
+	Node* newHead = nullptr;
+	Node* result = nullptr;
+
+	while (true)
+	{
+		if (first == nullptr)
+		{
+			result->m_pNext = second;
+			break;
+		}
+
+		if (second == nullptr)
+		{
+			result->m_pNext = first;
+			break;
+		}
+		
+
+
+		if (first->m_Value <= second->m_Value)
+		{
+			if (newHead == nullptr)
+			{
+				result = newHead = first;				
+			}
+			else
+			{
+				result->m_pNext = first;
+				result = first;
+			}
+			first = first->m_pNext;
+
+		}
+		else
+		{
+			if (newHead == nullptr)
+			{
+				result = newHead = second;
+			}
+			else
+			{
+				result->m_pNext = second;
+				result = second;
+			}
+			second = second->m_pNext;
+		}
+	}
+
+	return newHead;
 }
 
 List::~List()

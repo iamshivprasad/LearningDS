@@ -1,34 +1,11 @@
-// LinkedList.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Heap.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include "pch.h"
 #include <iostream>
-#include "List.h"
+
 
 int main()
 {
-    int isContinue = 1;
-
-    List myList;
-    int n;
-
-    while (isContinue)
-    {
-        std::cout << "Enter an element: \n";
-        std::cin >> n;
-
-        //myList.Add(n);
-        myList.InsertInFront(n);
-
-        std::cout << "Do you want to enter another element: \n";
-        std::cin >> isContinue;
-    }
-
-    std::cout << "Inserting elements: \n";
-
-    myList.ReverseInGroup(4);
-
-    myList.Display();
 
 }
 

@@ -1,35 +1,43 @@
-// LinkedList.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// MultipleInheritanceSample.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include "pch.h"
 #include <iostream>
-#include "List.h"
+using namespace std;
+
+class A
+{
+public:
+	A() {}
+
+	void display()
+	{
+		cout << "display for A";
+	}
+};
+
+class B
+{
+public:
+	
+	B() {}
+
+	void display()
+	{
+		cout << "display for B";
+	}
+};
+
+class C : public B, public A
+{
+
+};
 
 int main()
 {
-    int isContinue = 1;
+    std::cout << "Hello World!\n";
 
-    List myList;
-    int n;
-
-    while (isContinue)
-    {
-        std::cout << "Enter an element: \n";
-        std::cin >> n;
-
-        //myList.Add(n);
-        myList.InsertInFront(n);
-
-        std::cout << "Do you want to enter another element: \n";
-        std::cin >> isContinue;
-    }
-
-    std::cout << "Inserting elements: \n";
-
-    myList.ReverseInGroup(4);
-
-    myList.Display();
-
+	C obj;
+	obj.B::display();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

@@ -1,35 +1,49 @@
-// LinkedList.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// FindEquilibrium.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include "pch.h"
 #include <iostream>
-#include "List.h"
+
+using  namespace std;
 
 int main()
 {
-    int isContinue = 1;
+    std::cout << "Enter the size of the array";
+    
+    int size;
+    cin >> size;
 
-    List myList;
-    int n;
+    cout << "Enter the array elements: ";
 
-    while (isContinue)
+    int* arr = new int[size]();
+
+    for (int i = 0; i < size; ++i)
     {
-        std::cout << "Enter an element: \n";
-        std::cin >> n;
-
-        //myList.Add(n);
-        myList.InsertInFront(n);
-
-        std::cout << "Do you want to enter another element: \n";
-        std::cin >> isContinue;
+        cin >> arr[i];
     }
 
-    std::cout << "Inserting elements: \n";
+    // Find total sum
 
-    myList.ReverseInGroup(4);
+    int sum = 0;
+    int leftSum = 0;
+    for (int i = 0; i < size; ++i)
+    {
+        sum += arr[i];
+    }
 
-    myList.Display();
+    int idx = 0;
+    for (; idx < size; ++idx)
+    {
+        sum -= arr[idx];
 
+        if (sum == leftSum)
+            break;
+
+        leftSum += arr[idx];
+    }
+
+    cout << "Equilibrium at " << idx;
+
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
