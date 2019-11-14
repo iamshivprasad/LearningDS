@@ -5,6 +5,7 @@
 #include <map>
 #include <algorithm>
 #include <queue>
+#include <stack>
 
 using namespace std;
 
@@ -100,6 +101,43 @@ void verticalOrder(Node* root)
 		{
 			cout << i << " ";
 		}
+	}
+}
+
+void bottomView(Node* root)
+{
+	if (root == NULL)
+	{
+		return;
+	}
+
+	queue<pair<Node*, int>> values;
+	map<int, stack<int>> hashTable;
+
+	values.push({ root, 0 });
+	while (!values.empty())
+	{
+		Node* temp = values.front().first;
+		int hd = values.front().second;
+		hashTable[hd].push(temp->data);
+
+		values.pop();
+
+		if (temp->left != NULL)
+		{
+			values.push({ temp->left, hd - 1 });
+		}
+
+		if (temp->right != NULL)
+		{
+			values.push({ temp->right, hd + 1 });
+		}
+	}
+
+	map<int, stack<int>>::iterator itr;
+	for (itr = hashTable.begin(); itr != hashTable.end(); ++itr)
+	{
+		cout << itr->second.top() << " ";
 	}
 }
 
