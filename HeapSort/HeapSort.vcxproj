@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{D628D9AA-9F5F-4C24-B7B7-C614DA8FBDE1}</ProjectGuid>
+    <ProjectGuid>{8BCDD7E2-FA2F-4B57-BDB4-0C776FF4D8C1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Heap</RootNamespace>
+    <RootNamespace>HeapSort</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -151,11 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Heap.cpp" />
-    <ClCompile Include="MaxHeap.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="MaxHeap.h" />
+    <ClCompile Include="HeapSort.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

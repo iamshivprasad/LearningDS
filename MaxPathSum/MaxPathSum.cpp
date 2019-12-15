@@ -1,24 +1,36 @@
-// Heap.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// MaxPathSum.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
-#include "MaxHeap.h"
 
 using namespace std;
 
+struct Node
+{
+	int data;
+
+	Node* left;
+	Node* right;
+};
+
+int findMaxSum(Node* root, int& result)
+{
+	if (root == NULL)
+		return 0;
+
+	if (root->left == NULL && root->right == NULL)
+		return root->data;
+
+	int leftSum = findMaxSum(root->left, result);
+	int rightSum = findMaxSum(root->right, result);
+
+	return 
+}
+
+
 int main()
 {
-	MaxHeap myHeap(10);
-
-	int i = 0;
-	int element;
-	while (i < 10)
-	{
-		cin >> element;
-		myHeap.insertKey(element);
-	}
-
-	return 0;
+    std::cout << "Hello World!\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

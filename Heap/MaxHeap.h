@@ -1,5 +1,5 @@
 #pragma once
-class MinHeap
+class MaxHeap
 {
 private:
     int* heapElements;
@@ -7,11 +7,13 @@ private:
     int heap_size;
 
 public:
-    MinHeap(int size) : capacity(size), heap_size(0)
+    MaxHeap(int size) : capacity(size), heap_size(1)
     {
         heapElements = new int[size];
     }
 
     void insertKey(int n);
+
+	void deleteKey();
 };
 
