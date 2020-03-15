@@ -53,6 +53,19 @@ bool isBST(Node* root) {
 
 }
 
+bool isBSTOptimal(Node* root, int l, int r)
+{
+	if (root == NULL)
+		return true;
+
+	if (root->data > l && root->data < r &&
+		isBSTOptimal(root->left, l, root->data) && isBSTOptimal(root->right, root->data, r))
+	{
+		return true;
+	}
+
+	return false;
+}
 
 int main()
 {
@@ -78,7 +91,8 @@ int main()
 
 	two->right = three;
 
-	bool res = isBST(one);
+	//bool res = isBST(one);
+	bool res = isBSTOptimal(one, INT_MAX, INT_MIN);
 
 
 }
