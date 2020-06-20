@@ -1,27 +1,37 @@
-// Heap.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// HackerrankDavisStaircase.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
-#include "MaxHeap.h"
+#include <unordered_map>
 
 using namespace std;
 
+unordered_map<int, int> table;
+
+int climb(int n)
+{
+    if (n < 0)
+        return 0;
+
+    if (n == 0)
+        return 1;
+
+    if (table.find(n) == table.end())
+    {
+        int count = climb(n - 1) + climb(n - 2) + climb(n - 3);
+        table[n] = count;
+    }
+
+    return table[n];
+}
+
 int main()
 {
-	//MaxHeap myHeap(10);
+    //std::cout << "Hello World!\n";
+    int n;
+    cin >> n;
 
-	//int i = 0;
-	//int element;
-	//while (i < 10)
-	//{
-	//	cin >> element;
-	//	myHeap.insertKey(element);
-	//}
-
-	int arr[] = { 9, 8, 7, 15, 12, 10 };
-
-	MaxHeap::BuildMaxHeap(arr, 6);
-	return 0;
+    cout << climb(n);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

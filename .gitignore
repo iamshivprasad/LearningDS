@@ -37,3 +37,5 @@
 /FibonacciDynamicProgramming/x64/Debug
 /HackerrankIceCreamParlor/x64/Debug
 /AllSubstringsOfGivenString/x64/Debug
+*/x64/Debug
+*.txt

@@ -6,6 +6,9 @@ private:
     int capacity;
     int heap_size;
 
+private:
+    static void heapify(int* arr, int k, int size);
+
 public:
     MaxHeap(int size) : capacity(size), heap_size(1)
     {
@@ -15,5 +18,7 @@ public:
     void insertKey(int n);
 
 	void deleteKey();
+
+    static void BuildMaxHeap(int* arr, int size);
 };
 

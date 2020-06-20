@@ -1,27 +1,32 @@
-// Heap.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// GraphTheory.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
-#include "MaxHeap.h"
+
+#define I INT_MAX
 
 using namespace std;
 
+void primsMst(int cost[][8])
+{
+
+}
+
 int main()
 {
-	//MaxHeap myHeap(10);
+	int cost[][8] =
+	{
+		{I,I,I,I,I,I,I,I},
+		{I,I,25,I,I,I,15,I},
+		{I,25,I,12,I,I,I,10},
+		{I,I,12,I,8,I,I,I},
+		{I,I,I,8,I,16,I,14},
+		{I,I,I,I,16,I,20,18},
+		{I,5,I,I,I,20,I,I},
+		{I,I,10,I,14,18,I,I}
+	};
 
-	//int i = 0;
-	//int element;
-	//while (i < 10)
-	//{
-	//	cin >> element;
-	//	myHeap.insertKey(element);
-	//}
 
-	int arr[] = { 9, 8, 7, 15, 12, 10 };
-
-	MaxHeap::BuildMaxHeap(arr, 6);
-	return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

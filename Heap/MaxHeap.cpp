@@ -52,3 +52,43 @@ void MaxHeap::deleteKey()
 
 	}
 }
+
+void MaxHeap::BuildMaxHeap(int* arr, int size)
+{
+	for (int i = (size / 2) - 1; i >= 0; --i)
+	{
+		heapify(arr, i, size);
+	}
+
+}
+
+void MaxHeap::heapify(int* arr, int k, int size)
+{
+	int n = arr[k];
+
+	int l = 0;
+	int r = 0;
+	int largest = 0;
+
+	while (k < size)
+	{
+		l = 2 * k + 1;
+		r = 2 * k + 2;
+		largest = k;
+
+		if (l < n && arr[l] > arr[largest])
+			largest = l;
+		if (r < n && arr[r] > arr[largest])
+			largest = r;
+
+		if (largest == k)
+		{
+			break;
+		}
+		else
+		{
+			std::swap(arr[largest], arr[k]);
+			k = largest;
+		}
+	}
+}

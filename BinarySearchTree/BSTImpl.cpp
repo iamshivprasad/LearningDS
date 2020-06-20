@@ -209,14 +209,12 @@ Node* BSTImpl::Delete(Node* root, int nVal)
         {
             delete root;
             root = nullptr;
-            return root;
         }
         else if (root->left == nullptr)
         {
             Node* tmp = root;
             root = root->right;
             delete tmp;
-            return root;
         }
         else if (root->right == nullptr)
         {
@@ -232,7 +230,7 @@ Node* BSTImpl::Delete(Node* root, int nVal)
             root->right = Delete(root->right, minNode->data);
         }
     }
-
+    return root;
 }
 
 

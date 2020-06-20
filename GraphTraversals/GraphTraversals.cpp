@@ -1,27 +1,28 @@
-// Heap.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// GraphTraversals.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
-#include "MaxHeap.h"
+#include "Graph.h"
 
 using namespace std;
 
 int main()
 {
-	//MaxHeap myHeap(10);
+	cout << "How many edges: " << endl;
 
-	//int i = 0;
-	//int element;
-	//while (i < 10)
-	//{
-	//	cin >> element;
-	//	myHeap.insertKey(element);
-	//}
+	int n = 0;
+	cin >> n;
 
-	int arr[] = { 9, 8, 7, 15, 12, 10 };
+	Graph g;
+	string u, v;
+	cout << "Enter the edges: " << endl;
+	for (int i = 0; i < n; ++i)
+	{
+		cin >> u >> v;
+		g.addEdge(u, v);
+	}
 
-	MaxHeap::BuildMaxHeap(arr, 6);
-	return 0;
+	g.dfs("abc");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

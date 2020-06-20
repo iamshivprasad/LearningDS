@@ -12,6 +12,9 @@ struct Node
 
 	Node* left;
 	Node* right;
+
+public: 
+	Node(int n) : data(n), left(nullptr), right(nullptr) {}
 };
 
 int height(Node* root)
@@ -22,6 +25,13 @@ int height(Node* root)
 	}
 
 	return 1 + max(height(root->left), height(root->right));
+}
+
+int numOfNodes(Node* root)
+{
+	if (root == NULL)
+		return 0;
+	return 1 + max(numOfNodes(root->left), numOfNodes(root->right));
 }
 
 bool isBalanced(Node* root)
@@ -50,18 +60,24 @@ int diameter(Node* root)
 	if (root == NULL)
 		return 0;
 
-	int lheight = height(root->left);
-	int rheight = height(root->right);
+	int l = numOfNodes(root->left);
+	int r = numOfNodes(root->right);
 
 	int ldiameter = diameter(root->left);
 	int rdiameter = diameter(root->left);
 
-	return max(1 + lheight + rheight, max(ldiameter, rdiameter));
+	return max(1 + l + r, max(ldiameter, rdiameter));
 }
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	struct Node* root = new Node(1);
+	root->left = new Node(2);
+	root->right = new Node(3);
+	root->left->left = new Node(4);
+	root->left->right = new Node(5);
+
+	int n = diameter(root);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
