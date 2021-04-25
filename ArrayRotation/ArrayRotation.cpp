@@ -22,9 +22,13 @@ void rotateLeft(int* arr, int size, int rotate, int*& result)
     }
 }
 
+
 int main()
 {
     int arr[] = { 3,4,5,6,7,8 };
+
+    int tmp[][2] = { {1,2}, {2,3} };
+
     int* result = nullptr;
     
     rotateRight(arr, 6, 2, result);

@@ -74,41 +74,54 @@ long roadsAndLibraries(int n, int c_lib, int c_road, vector<vector<int>> cities)
     return (long)(countRoad * c_road ) + (long) (countLib * c_lib);
 }
 
+//class B
+//{
+//public:
+//    int a;
+//    void display()
+//    {
+//        cout << "hello";
+//    }
+//};
+
 int main()
 {
-    int q;
-    cin >> q;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    //B* ptr = NULL;
+    //ptr->display();
 
-    for (int q_itr = 0; q_itr < q; q_itr++) {
-        string nmC_libC_road_temp;
-        getline(cin, nmC_libC_road_temp);
+    //int q;
+    //cin >> q;
+    //cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-        vector<string> nmC_libC_road = split_string(nmC_libC_road_temp);
+    //for (int q_itr = 0; q_itr < q; q_itr++) {
+    //    string nmC_libC_road_temp;
+    //    getline(cin, nmC_libC_road_temp);
 
-        int n = stoi(nmC_libC_road[0]);
+    //    vector<string> nmC_libC_road = split_string(nmC_libC_road_temp);
 
-        int m = stoi(nmC_libC_road[1]);
+    //    int n = stoi(nmC_libC_road[0]);
 
-        int c_lib = stoi(nmC_libC_road[2]);
+    //    int m = stoi(nmC_libC_road[1]);
 
-        int c_road = stoi(nmC_libC_road[3]);
+    //    int c_lib = stoi(nmC_libC_road[2]);
 
-        vector<vector<int>> cities(m);
-        for (int i = 0; i < m; i++) {
-            cities[i].resize(2);
+    //    int c_road = stoi(nmC_libC_road[3]);
 
-            for (int j = 0; j < 2; j++) {
-                cin >> cities[i][j];
-            }
+    //    vector<vector<int>> cities(m);
+    //    for (int i = 0; i < m; i++) {
+    //        cities[i].resize(2);
 
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        }
+    //        for (int j = 0; j < 2; j++) {
+    //            cin >> cities[i][j];
+    //        }
 
-        long result = roadsAndLibraries(n, c_lib, c_road, cities);
+    //        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    //    }
 
-        cout << result << "\n";
-    }
+    //    long result = roadsAndLibraries(n, c_lib, c_road, cities);
+
+    //    cout << result << "\n";
+    //}
 
 
     return 0;

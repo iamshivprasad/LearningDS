@@ -29,7 +29,7 @@ public:
 
     ~HashTable()
     {
-
+        // delete all the pointers
     }
 
     void insert(T val)

@@ -22,6 +22,7 @@ void MaxHeap::insertKey(int n)
 
 }
 
+// From up to bottom
 void MaxHeap::deleteKey()
 {
 	if (heap_size < 1)

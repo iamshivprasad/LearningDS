@@ -55,8 +55,8 @@ bool Graph::isCycleDFSDirected(string s)
 bool Graph::isCycleDFSUndirected(string s)
 {
 	map<string, bool> visited;
-	unordered_set<string> parents;
-	return isCycleDFSUtilForUnDirected(s, visited, parent);
+	//unordered_set<string> parents;
+	return isCycleDFSUtilForUnDirected(s, visited, "");
 }
 
 void Graph::dfsUtil(string s, map<string, bool>& visited)

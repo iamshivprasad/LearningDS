@@ -2,6 +2,9 @@
 //
 
 #include <iostream>
+#include <vector>
+
+using namespace std;
 
 void swap(int& a, int& b)
 {
@@ -133,11 +136,49 @@ void Merge(int arr[], int start, int mid, int end)
     rightSubArr = nullptr;
 }
 
+int partition(int arr[], int left, int right)
+{
+    int pivot = arr[right];
+
+    int pIdx = left;
+
+    for (int i = left; i < right; ++i)
+    {
+        if (arr[i] <= pivot)
+        {
+            int temp = arr[pIdx];
+            arr[pIdx] = arr[i];
+            arr[i] = temp;
+            ++pIdx;
+        }
+    }
+
+    int temp = arr[pIdx];
+    arr[pIdx] = arr[right];
+    arr[right] = temp;
+
+    return pIdx;
+}
+
+void quickSort(int arr[], int left, int right)
+{
+    if (left < right)
+    {
+        int idx = partition(arr, left, right);
+
+        quickSort(arr, left, idx - 1);
+        quickSort(arr, idx + 1, right);
+    }
+}
+
 int main()
 {
-    int arr[8] = { 2, 4, 1, 6, 8, 5, 3, 7 };
+    int arr[8] = { 2, 4, 1, 6, 8, 5, 3, 7};
 
-    MergeSort(arr, 0, 7);
+    //MergeSort(arr, 0, 7);
+    std::vector<int> vect(std::begin(arr), std::end(arr));
+    
+    quickSort(arr, 0, vect.size() - 1);
 
     for (int i = 0; i < 8; ++i)
     {
